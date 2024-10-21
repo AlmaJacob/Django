@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
-<body style="color: g;">
-    <h3 style="color: blueviolet;">Name : {{Name}}</h3>
-    <h3 style="color: blueviolet;">Age : {{age}}</h3>
-    <h3 style="color: blueviolet;">place : {{place}}</h3>
-    <h1 style="color: brown;">these is a html file</h1>
+<body>
+  <h1>it is a page</h1>
+  <img src="{% static '/images/gg.jpg' %}" alt="">
 </body>
 </html>

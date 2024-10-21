@@ -8,6 +8,8 @@ urlpatterns=[
     path('fun5/<int:a>/<int:b>/<int:c>',views.fun5),
     path('index',views.index_page),
     path('demo',views.demo),
-    path('second',views.second_page)
+    path('second',views.second_page),
+    path('todo',views.todo),
+    
 
 ]
