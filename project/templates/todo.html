@@ -22,6 +22,9 @@
         <tr>
             <td>{{i.id}}</td>
             <td>{{i.task}}</td>
+            <td><a href="edit/{{i.id}}">edit</a></td>
+            <td><a href="delete/{{i.id}}">delete</a></td>
+            
         </tr>
         {% endfor %}
     </table>
