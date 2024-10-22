@@ -35,8 +35,8 @@ def second_page(req):
 def todo(req):
     if req.method=='POST':
         id=req.POST['id']
-        task=req.POST['task']
-        todo.append({'id':id,'task':task})
+        task=req.POST['task']  
+        todo.append({'id': id,'task': task})
         print(todo)
         return redirect(todo)
     return render(req,'todo.html',{'todo':todo})
