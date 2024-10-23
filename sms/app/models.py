@@ -8,3 +8,6 @@ class student(models.Model):
     age=models.IntegerField()
     email=models.EmailField()
     phno=models.IntegerField()
+
+    def __str__(self):
+        return self.name

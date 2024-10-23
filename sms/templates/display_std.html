@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+</head>
+<style>
+    table,th,td{
+        border: 1px,solid,black;
+    }
+</style>
+<body>
+    <h2>student table</h2>
+    <table>
+        <tr>
+            <th>roll_no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>phno</th>
+        </tr>
+        {% for std in data %}
+    <tr>
+        <th>{{std.roll_no}}</th>
+        <th>{{std.name}}</th>
+        <th>{{std.age}}</th>
+        <th>{{std.email}}</th>
+        <th>{{std.phno}}</th>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

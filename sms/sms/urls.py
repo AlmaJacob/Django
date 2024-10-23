@@ -19,5 +19,7 @@ from django.urls import path
 from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.fun1)
+    path('',views.fun1),
+    path('disp',views.disp_std),
+    path('add',views.add_std),
 ]
