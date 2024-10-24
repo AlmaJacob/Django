@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>edit student</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        rollno : <input type="number" name="roll_no" value="{{data.roll_no}}"><br>
+        name : <input type="text" name="name" value="{{data.name}}"><br>
+        age : <input type="number" name="age" value="{{data.age}}"><br>
+        email : <input type="email" name="email" value="{{data.email}}"><br>
+        phno : <input type="tel" name="phno" value="{{data.phno}}"><br>
+        <input type="submit" value="Edit">
+
+    </form>
+    
+    
+</body>
+</html>

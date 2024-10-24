@@ -28,8 +28,13 @@
         <th>{{std.age}}</th>
         <th>{{std.email}}</th>
         <th>{{std.phno}}</th>
+        <th>
+            <a href="edit/{{std.pk}}">Edit</a>
+            <a href="">Delete</a>
+        </th>
     </tr>
     {% endfor %}
 </table>
+<a href="add">add student</a>
 </body>
 </html>
