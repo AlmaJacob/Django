@@ -32,5 +32,11 @@ def edit_std(req,id):
         student.objects.filter(pk=id).update(roll_no=roll,name=std_name,age=std_age,email=std_email,phno=std_phno)
         return redirect(disp_std)
     else:
-        return render(req,'edit_std.html',{'data':data})        
+        return render(req,'edit_std.html',{'data':data})
+
+def delete_std(req,id):
+     data=student.objects.get(pk=id)
+     data.delete()
+     return redirect(disp_std)
+
 
