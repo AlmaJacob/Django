@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <h2>Student Management System</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        rollno : <input type="number" name="roll_no"><br>
+        name : <input type="text" name="name"><br>
+        age : <input type="number" name="age"><br>
+        age : <input type="number" name="mark"><br>
+        email : <input type="email" name="email"><br>
+        phno : <input type="tel" name="phno"><br>
+        <input type="submit" value="submit">
+    </form>
+    <table>
+        <tr>
+            <th>roll_no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>mark</th>
+            <th>email</th>
+            <th>phno</th>
+        </tr>
+        {% for std in sms %}
+        <tr>
+            <td>{{std.roll_no}}</td>
+            <td>{{std.name}}</td>
+            <td>{{std.age}}</td>
+            <td>{{std.mark}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.phno}}</td>
+            <td><a href="edit/{{i.id}}">edit</a></td>
+            <td><a href="delete/{{i.id}}">delete</a></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
 </head>
 <body>
     
