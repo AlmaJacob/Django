@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
     display: flex;
@@ -50,4 +50,33 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+ */
+
+ body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+#cart {
+    font-size: 24px;
+    color: white;
+}
+
+#logout {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#logout:hover {
+    color: #ffcc00; /* Change logout color on hover */
+}
+
+h2 {
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
 }
