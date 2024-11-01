@@ -105,5 +105,21 @@ def delete_pro(req,id):
 #--------------------user---------------------------
 def user_home(req):
        if 'user' in req.session:
-              return render(req,'user/user_home.html')
+              Products=Product.objects.all()
+              return render(req,'user/user_home.html',{'product':Products})
 
+def view_product(req,id):
+       product=Product.objects.get(pk=id)
+       return render(req,'user/view_pro.html',{'product':product})
+
+def add_to_cart(req,pid):
+          product=Product.objects.get(pk=pid)
+          print(product)
+          user=User.objects.get(username=req.session['user'])
+          print(user)
+          data=cart.objects.create(user=user,product=product)
+          data.save()
+          return redirect(cart_display)
+
+def cart_display(req):
+       return render(req,'cart_display.html')          
