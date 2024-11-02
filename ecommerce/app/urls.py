@@ -18,6 +18,7 @@ path('user_home',views.user_home),
 path('view_pro/<id>',views.view_product),
 path('add_to_cart/<pid>',views.add_to_cart),
 path('cart_disp',views.cart_display),
+path('delete_cart/<id>',views.delete_cart),
 
 
 

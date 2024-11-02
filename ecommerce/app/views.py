@@ -30,7 +30,7 @@ def shop_login(req):
                                    return redirect(user_home)
                     else:
                        messages.warning(req,'invalid username or password')
-                    return render(req,'login.html')
+                    return redirect(shop_login)
                 else:
                        return render(req,'login.html')
 
@@ -107,9 +107,15 @@ def user_home(req):
        if 'user' in req.session:
               Products=Product.objects.all()
               return render(req,'user/user_home.html',{'product':Products})
-
+       else:
+              return redirect(shop_login)                
 def view_product(req,id):
+       log_user=User.objects.get(username=req.session['user'])
        product=Product.objects.get(pk=id)
+       try:
+          cart1=cart.objects.get(product=product,user=log_user)
+       except:
+              cart=None       
        return render(req,'user/view_pro.html',{'product':product})
 
 def add_to_cart(req,pid):
@@ -122,4 +128,11 @@ def add_to_cart(req,pid):
           return redirect(cart_display)
 
 def cart_display(req):
-       return render(req,'cart_display.html')          
+        log_user=User.objects.get(username=req.session['user'])
+        data=cart.objects.filter(user=log_user)
+        return render(req,'user/cart_display.html',{'data':data})
+
+def delete_cart(req,id):
+       data=cart.objects.get(pk=id)
+       data.delete()
+       return redirect(cart_display)   
