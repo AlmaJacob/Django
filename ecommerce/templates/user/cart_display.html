@@ -16,7 +16,8 @@
                 {{cart_obj.product.name}}
                 {{cart_obj.product.price}}
                 {{cart_obj.product.offer_price}}
-                <a href="../delete_cart">delete</a>
+                <a href="buy_pro/{{cart_obj.product.pk}}" class="btn btn-outline-info">Buy</a>
+                <a href="delete_cart/{{cart_obj.pk}}" class="btn btn-outline-info">delete</a>
             </div>
             {% endfor %}
         </div>

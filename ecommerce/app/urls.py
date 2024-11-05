@@ -19,7 +19,8 @@ path('view_pro/<id>',views.view_product),
 path('add_to_cart/<pid>',views.add_to_cart),
 path('cart_disp',views.cart_display),
 path('delete_cart/<id>',views.delete_cart),
-
+path('buy_pro/<id>',views.buy_pro),
+path('view_bookings',views.user_view_booking),
 
 
 

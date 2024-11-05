@@ -113,10 +113,10 @@ def view_product(req,id):
        log_user=User.objects.get(username=req.session['user'])
        product=Product.objects.get(pk=id)
        try:
-          cart1=cart.objects.get(product=product,user=log_user)
+          Cart=cart.objects.get(product=product,user=log_user)
        except:
-              cart=None       
-       return render(req,'user/view_pro.html',{'product':product})
+              Cart=None       
+       return render(req,'user/view_pro.html',{'product':product,'Cart':Cart})
 
 def add_to_cart(req,pid):
           product=Product.objects.get(pk=pid)
@@ -136,3 +136,16 @@ def delete_cart(req,id):
        data=cart.objects.get(pk=id)
        data.delete()
        return redirect(cart_display)   
+
+def buy_pro(req,id):
+       product=Product.objects.get(pk=id) 
+       user=User.objects.get(username=req.session['user'])
+       price=product.offer_price
+       data=Buy.objects.create(user=user,product=product,price=price)
+       data.save()
+       return redirect(user_home)
+
+def user_view_booking(req):
+       user=User.objects.get(username=req.session['user'])
+       data=Buy.objects.filter(user=user)
+       return render(req,'user/view_bookings.html',{'data':data})
