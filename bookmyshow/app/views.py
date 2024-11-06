@@ -5,3 +5,6 @@ from django.shortcuts import render
 def index_page(req):
     return render(req,'index.html')
 
+def venom_page(req):
+    return render(req,'venom.html')
+

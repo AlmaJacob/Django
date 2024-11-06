@@ -12,6 +12,7 @@ path('shop_home',views.shop_home),
 path('add',views.add_product),
 path('edit/<id>',views.edit_pro),
 path('delete/<id>',views.delete_pro),
+path('bookings',views.bookings),
 
 #-----------------user---------------------
 path('user_home',views.user_home),
