@@ -8,6 +8,8 @@ class Movie(models.Model):
     time_duration=models.TextField()
     category=models.TextField()
     date=models.DateField()
+    def __str__(self):
+     return self.movie_name
 
 class Lang(models.Model):
     language=models.TextField()

@@ -188,17 +188,20 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
+                            {% for i in data %}
                             <div class="col-md-3">
+                                <a href="view/{{i.pk}}">
                                <div class="movie-card">
-                                        <img src="{% static 'images/arm.avif' %}" alt="A.R.M" style="height: 400px; width:100%;">
+                                        <img src="{{i.fg_image.url}}" alt="" style="height: 400px; width:100%;">
                                         <div class="movie-details">
-                                            <h5 class="movie-title">A.R.M</h5>
-                                            <p class="movie-genre">Action/Adventure/Drama</p>
+                                            <h5 class="movie-title">{{i.movie_name}}</h5>
+                                            <p class="movie-genre">{{i.category}}</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-            
+                            {% endfor %}
+<!--             
                             <div class="col-md-3">
                                 <a class="text-decoration-none text-black" href="#">
                                     <div class="movie-card">
@@ -264,7 +267,7 @@
                             </div>
 
                             <!-- connected to 2nd html -->
-                            <div class="col-md-3">
+                            <!-- <div class="col-md-3">
                                 <a class="text-decoration-none text-black" href="venom">
                                     <div class="movie-card">
                                         <img src="{% static 'images/venom.avif' %}" alt="venom" style="height: 400px; width:100%;">
@@ -289,8 +292,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            
+                </div> -->
+             -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>

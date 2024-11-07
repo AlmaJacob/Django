@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     </head>
     <body>
-        <div id="main1" class="image-fluid d-flex ">
+        <div id="main1" class="image-fluid d-flex  " style="background-image: url({{data.bg_image.url}});">
             <div id="main2" class=" row align-items-center">
                 <!-- Movie Card 1 -->
                 <div class="col-md-4">
                     <div class="movie-card">
-                        <img src="{% static 'images/poster.avif' %}" alt="venom">
+                        <img src="{{data.fg_image.url}}" alt="venom">
                         <div class="movie-details">
                             <div class="movie-stats" style="background-color: #000000">
                                 <span> Releasing on 25 Oct, 2024</span>
@@ -27,7 +27,7 @@
                 </div>
                 <div id="main3" class="col-md-8">
                     <div class="movieinfo">
-                        <div class="movietitle"><h1>Venom</h1></div>
+                        <div class="movietitle"><h1>{{data.movie_name}}</h1></div>
                         <div id="rating" class="d-flex align-items-center">
                             <span id="star" class="star text-white"><h6>&nbsp;&nbsp;👍121K are interested ? </h6><br><h6>are you intrested in watching these movie</h6></span>
                             <button id="ratebtn" class="btn btn-outline-secondary rate-btn ms-auto"><b>I'am interested</b>&nbsp;&nbsp;</button>
@@ -36,8 +36,10 @@
                  
                             <div id="lang" class="col-9"><span class="language">2D,4DX 3D,IMAX 3D,3D4X,IMAX 2D</span></div>
                             <div id="lang" class="col-9"><span class="language">Malayalam, Hindi, Tamil, Kannada, Telugu</span></div>
+                            <div id="lang" class="col-9"><span class="language">{{data.time_duration}}</span></div>
+                            <div id="lang" class="col-9"><span class="language">{{data.category}}</span></div>
                         </div>
-                        <div class="duration mt-3 text-white"><b>Action,Adventure,Sci-Fic</b></div></div>
+                       
                         
 
                         <a id="book" class="mt-5" href="#"><b>Book tickets</b></a>
